@@ -1,13 +1,10 @@
 import React from "react";
-
-interface DescriptionProps {
-  text: string;
-  className?: string;
-}
+import styles from "./Description.module.css";
+import { DescriptionProps } from "./Description.types";
 
 export const Description: React.FC<DescriptionProps> = ({
   text,
   className,
 }) => {
-  return <p className={`text-gray-600 ${className}`}>{text}</p>;
+  return <p className={`${styles.description} ${className || ""}`}>{text}</p>;
 };
