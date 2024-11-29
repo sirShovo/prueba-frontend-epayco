@@ -1,5 +1,5 @@
 import React from "react";
-import { Item } from "./item";
+import { Item } from "./Item";
 
 interface ItemListProps {
   items: { id: number; title: string; body: string }[];
