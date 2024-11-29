@@ -1,17 +1,10 @@
 import React from "react";
+import styles from "./Label.module.css";
+import { LabelProps } from "./Label.types";
 
-interface LabelProps {
-  htmlFor: string;
-  text: string;
-  className?: string;
-}
-
-export const Label: React.FC<LabelProps> = ({ htmlFor, text, className }) => {
+export const Label: React.FC<LabelProps> = ({ text, htmlFor, className }) => {
   return (
-    <label
-      htmlFor={htmlFor}
-      className={`block text-sm font-medium text-gray-700 ${className}`}
-    >
+    <label htmlFor={htmlFor} className={`${styles.label} ${className || ""}`}>
       {text}
     </label>
   );
