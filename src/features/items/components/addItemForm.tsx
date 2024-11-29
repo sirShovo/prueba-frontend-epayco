@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { InputField } from '../../../components/molecules/InputField/InputField';
 
 interface AddItemFormProps {
   onSubmit: (data: any) => void;
@@ -15,8 +16,20 @@ export const AddItemForm: React.FC<AddItemFormProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
-      <input {...register("title")} placeholder="Title" required />
-      <textarea {...register("body")} placeholder="Body" required />
+      <InputField
+        label="Title"
+        id="title"
+        type="text"
+        placeholder="Enter title"
+        {...register("title")}
+      />
+      <InputField
+        label="Body"
+        id="body"
+        type="text"
+        placeholder="Enter body"
+        {...register("body")}
+      />
       <button type="submit">Add Item</button>
     </form>
   );
