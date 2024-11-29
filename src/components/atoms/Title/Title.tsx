@@ -1,14 +1,13 @@
 import React from "react";
+import styles from "./Title.module.css";
+import { TitleProps } from "./Title.types";
 
-interface TitleProps {
-  text: string;
-  className?: string;
-  as?: keyof JSX.IntrinsicElements;
-}
+export const Title: React.FC<TitleProps> = ({ text, level = 1, className }) => {
+  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-export const Title: React.FC<TitleProps> = ({ text, className, as = "h2" }) => {
-  const Element = as;
   return (
-    <Element className={`text-2xl font-bold ${className}`}>{text}</Element>
+    <Tag className={`${styles.title} ${styles[`h${level}`]} ${className || ""}`}>
+      {text}
+    </Tag>
   );
 };
