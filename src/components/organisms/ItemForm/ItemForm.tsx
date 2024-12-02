@@ -51,7 +51,6 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
             name: "title",
             id: "title",
           }}
-          errorMessage={error && !title.trim() ? error : undefined}
         />
         <FormField
           label={{ text: "Body", htmlFor: "body" }}
@@ -63,8 +62,11 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
             name: "body",
             id: "body",
           }}
-          errorMessage={error && !body.trim() ? error : undefined}
+          errorMessage={
+            error && !title.trim() && !body.trim() ? error : undefined
+          }
         />
+
         <div className={styles.form_actions}>
           <ButtonWrapper
             button={{
