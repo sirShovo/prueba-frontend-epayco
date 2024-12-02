@@ -20,6 +20,7 @@ export const FormField: React.FC<FormFieldProps> = ({
         disabled={input.disabled}
         className={input.className}
         name={input.name}
+        id={input.id}
       />
       {errorMessage && <div className={styles.error}>{errorMessage}</div>}
     </div>

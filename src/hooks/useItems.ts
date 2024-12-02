@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { fetchItems } from "../api/itemsApi";
+import { fetchItems } from "../infrastructure/api/FetchItems";
 
 export const useItems = () => {
   return useQuery("items", fetchItems, {

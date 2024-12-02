@@ -6,4 +6,5 @@ export type InputProps = {
   className?: string;
   disabled?: boolean;
   name?: string;
+  id?: string;
 };
