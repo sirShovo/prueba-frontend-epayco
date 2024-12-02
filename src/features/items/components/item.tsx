@@ -6,16 +6,16 @@ interface ItemProps {
 
 export const Item: React.FC<ItemProps> = ({ item }) => (
   <div className="flex flex-col justify-center">
-    <div className="flex flex-col h-full shadow justify-between rounded-lg pb-8 p-6 xl:p-8 mt-3 bg-stone-100 border-l-4 border-cyan-700">
+    <div className="flex flex-col h-full shadow justify-between rounded-lg pb-8 p-6 xl:p-8 mt-3 bg-white border-l-4 border-cyan-700">
       <div>
-        <h4 className=" font-bold text-2xl leading-tight">{item.title}</h4>
+        <h4 className=" font-bold text-2xl leading-tight text-cyan-600">{item.title}</h4>
         <div className="my-4">
           <p>{item.body}</p>
         </div>
       </div>
       <div>
         <a
-          className="mt-1 inline-flex font-bold items-center border-2 border-transparent outline-none focus:ring-1 focus:ring-offset-2 focus:ring-link active:bg-link active:text-gray-700 active:ring-0 active:ring-offset-0 leading-normal bg-link text-cyan-600 hover:bg-opacity-80 text-base rounded-lg py-1.5"
+          className="mt-1 inline-flex font-bold items-center border-2 border-transparent outline-none focus:ring-1 focus:ring-offset-2 focus:ring-link active:bg-link active:text-gray-700 active:ring-0 active:ring-offset-0 leading-normal bg-link text-gray-500 hover:bg-opacity-80 text-base rounded-lg py-1.5"
           target="_self"
           href="/learn"
         >

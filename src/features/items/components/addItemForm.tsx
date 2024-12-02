@@ -24,7 +24,7 @@ export const AddItemForm: React.FC<AddItemFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="p-5 shadow">
       <FormField
         label={{ text: "Title", htmlFor: "title" }}
         input={{
