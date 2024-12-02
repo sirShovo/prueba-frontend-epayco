@@ -8,6 +8,7 @@ import { MessageError } from "../atoms/Error/Error";
 
 export const Home: React.FC = () => {
   const handleAddItem = (newItem: Item) => {
+    console.log('estoy aqui');
     items?.unshift(newItem);
   };
 

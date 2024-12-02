@@ -17,23 +17,21 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validación de los datos
     if (!title.trim() || !body.trim()) {
       setError("Both fields are required.");
       return;
     }
 
-    // Crear un nuevo ítem
     const newItem: Item = {
       id: crypto.randomUUID(),
       title,
       body,
     };
 
-    // Enviar el ítem al callback
+    console.log(newItem);
+
     onAddItem(newItem);
 
-    // Limpiar el formulario
     setTitle("");
     setBody("");
     setError("");
@@ -41,10 +39,7 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
 
   return (
     <section className={styles.form_container}>
-      <Title
-        text="Add new item"
-        className={styles.form_title}
-      />
+      <Title text="Add new item" className={styles.form_title} />
       <form className={styles.form_contend} onSubmit={handleSubmit}>
         <FormField
           label={{ text: "Title", htmlFor: "title" }}
@@ -71,7 +66,13 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onAddItem }) => {
           errorMessage={error && !body.trim() ? error : undefined}
         />
         <div className={styles.form_actions}>
-          <ButtonWrapper buttonText="Add Item" onClick={() => {}} />
+          <ButtonWrapper
+            button={{
+              onClick: () => {},
+              text: "Add Item",
+              type: "submit",
+            }}
+          />
         </div>
       </form>
     </section>
