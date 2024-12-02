@@ -6,9 +6,9 @@ interface ItemListProps {
 }
 
 export const ItemList: React.FC<ItemListProps> = ({ items }) => (
-  <div>
+  <section className="my-8 sm:my-10 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 p-6">
     {items.map((item) => (
       <Item key={item.id} item={item} />
     ))}
-  </div>
+  </section>
 );

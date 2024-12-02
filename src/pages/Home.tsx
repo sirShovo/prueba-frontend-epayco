@@ -2,7 +2,8 @@ import React from "react";
 import { useItems } from "../features/items/hooks/useItems";
 import { useAddItem } from "../features/items/hooks/useAddItem";
 import { ItemList } from "../features/items/components/ItemList";
-import { AddItemForm } from "../features/items/components/AddItemForm";
+import { AddItemForm } from "../features/items/components/addItemForm";
+
 
 export const Home: React.FC = () => {
   const { data: items, error, isLoading } = useItems();
@@ -16,11 +17,11 @@ export const Home: React.FC = () => {
   if (error instanceof Error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <main className="container m-auto">
       <h1>Add New Item</h1>
       <AddItemForm onSubmit={handleAddItem} />
-      <h2>Items List</h2>
+      <h2 className="text-center text-2xl font-bold my-8">Items List</h2>
       {items && <ItemList items={items} />}
-    </div>
+    </main>
   );
 };

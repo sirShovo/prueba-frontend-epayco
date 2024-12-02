@@ -9,6 +9,7 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   className,
   disabled = false,
+  name
 }) => {
   return (
     <input
@@ -20,6 +21,7 @@ export const Input: React.FC<InputProps> = ({
       className={`${styles.input} ${disabled ? styles.disabled : ""} ${
         className || ""
       }`}
+      name={name}
     />
   );
 };
